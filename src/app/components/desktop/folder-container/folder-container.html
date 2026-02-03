@@ -1,0 +1,12 @@
+@let height = imageSize() + 'px';
+<button class="btn folder-container" [style]="`height: ${height};`" (dblclick)="clickFolder()">
+  <img src="/assets/images/folder.png" />
+  <p> {{ folder().nombre}} </p>
+</button>
+
+@if(folderClicked()){
+<app-folder-manager (closeFolder)="close()"
+    [folder]="folder()"
+    [isMaximized]="isMaximized()"
+  />
+}

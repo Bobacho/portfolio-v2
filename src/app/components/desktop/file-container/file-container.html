@@ -1,0 +1,9 @@
+@let height = imageSize() + 'px';
+<button class="btn file-container" [style]="`height: ${height};`" (dblclick)="clickFile()">
+  <img [src]="file().icon" />
+  <p> {{ file().nombre}} </p>
+</button>
+
+@if(fileClicked()){
+<app-file-manager (closeFile)="close()" [file]="file()" [isMaximized]="isMaximized()" />
+}

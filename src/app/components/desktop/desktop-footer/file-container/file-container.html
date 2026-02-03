@@ -1,0 +1,4 @@
+@let height = imageSize() + 'px';
+<button class="btn folder-container" [style]="`height: ${height};`" (click)="clickFolder()">
+  <img [src]="file().icon" />
+</button>

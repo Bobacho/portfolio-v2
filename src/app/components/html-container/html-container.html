@@ -1,0 +1,9 @@
+@if(!file().error){
+<iframe [src]="file().src! | safe">
+</iframe>
+}
+@else{
+<a class="btn btn-primary" [href]="file().src! | safe">
+  Ir a la pagina web
+</a>
+}

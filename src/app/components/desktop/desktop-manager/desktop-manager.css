@@ -1,0 +1,65 @@
+.background {
+  --primary-color: #BBFBFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: -2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desktop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  margin-left: 20px;
+  z-index: -1;
+  grid-template-columns: repeat(10, 10%);
+}
+
+.orange {
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  background: linear-gradient(120deg, orange, rgb(255, 255, 255, 0.8));
+  border-radius: 25% 0% 0% 0%;
+}
+
+.green {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  background: linear-gradient(240deg, green, rgb(255, 255, 255, 0.8));
+  border-radius: 0% 25% 0% 0%;
+}
+
+.blue {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  background: linear-gradient(60deg, blue, rgb(255, 255, 255, 0.8));
+  border-radius: 0% 0% 0% 25%;
+}
+
+.yellow {
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  background: linear-gradient(0deg, yellow, rgb(255, 255, 255, 0.8));
+  border-radius: 0% 0% 25% 0%;
+}
+
+.square-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 20%;
+  height: 20%;
+  opacity: 0.5;
+}

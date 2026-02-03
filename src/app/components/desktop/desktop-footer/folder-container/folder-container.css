@@ -1,0 +1,15 @@
+img {
+  background-color: transparent;
+  aspect-ratio: 1/1;
+  height: 100%;
+}
+
+.folder-container:hover {
+  opacity: 50%;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

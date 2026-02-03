@@ -1,0 +1,38 @@
+<div draggable="true" [class]="!mousePressed() ? 'folder-manager' : 'hide'" (dragstart)="dragFile($event)"
+  (dragend)="dropFile($event)"
+  [style]="`top: ${position().y}px;left: ${position().x}px; width: ${size().width}%; height: ${size().height}%; ${displayWindow()}`">
+  <div class="folder-control">
+    <p>{{ currentFile().nombre }}</p>
+    <div class="buttons-control">
+      <button class="btn" (click)="minimize()">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button class="btn" (click)="expand()">
+        <i class="bi bi-square"></i>
+      </button>
+      <button class="btn" (click)="close()">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+  <div class="folder-url">
+    <div class="url">
+      <strong>
+        {{ currentFile().uri }}
+      </strong>
+    </div>
+  </div>
+  <div class="folder-body">
+    @switch(currentFile().mime){
+    @case('doom'){
+    <app-doom-container/>
+    }
+    @case('pdf'){
+    <app-pdf-container [file]="currentFile()" />
+      }
+    @case('html'){
+    <app-html-container [file]="currentFile()"/>
+    }
+    }
+  </div>
+</div>

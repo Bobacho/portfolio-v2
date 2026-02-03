@@ -1,0 +1,32 @@
+<div class="background">
+  <div class="square-container">
+    <div class="orange">
+    </div>
+    <div class="green">
+    </div>
+    <div class="blue">
+    </div>
+    <div class="yellow">
+    </div>
+  </div>
+</div>
+<div class="desktop">
+  @for(file of files(); track $index){
+  @switch(file.type){
+    @case("folder"){
+      <app-folder-container (appendFolder)="appendFolder($event)"
+          (closeFolder)="closeFolder($event)"
+          [isMaximized]="isMaximized(file)"
+          [folder]="file" />
+    }
+    @case("file"){
+      <app-file-container (appendfile)="appendFolder($event)"
+          [file]="file"
+          (closefile)="closeFolder($event)"
+          [isMaximized]="isMaximized(file)"
+          [file]="file"
+        />
+    }
+  }
+  }
+</div>

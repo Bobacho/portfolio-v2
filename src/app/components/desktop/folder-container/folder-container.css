@@ -1,0 +1,23 @@
+img {
+  background-color: transparent;
+  aspect-ratio: 1/1;
+  height: 100%;
+}
+
+.folder-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.folder-container:hover {
+  opacity: 50%;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

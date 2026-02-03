@@ -1,0 +1,198 @@
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-message {
+  margin-top: 40px;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.footer {
+  position: fixed;
+  top: 95%;
+  left: 48%;
+}
+
+
+.square-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 20%;
+  height: 20%;
+  gap: 5px;
+}
+
+@keyframes orangeAnimation {
+  0% {
+    background: linear-gradient(120deg, orange, rgb(255, 255, 255, 0.7));
+  }
+
+  16% {
+    background: linear-gradient(130deg, orange, rgb(255, 255, 255, 0.7));
+  }
+
+  33% {
+    background: linear-gradient(140deg, orange, rgb(255, 255, 255, 0.7));
+  }
+
+  50% {
+    background: linear-gradient(150deg, orange, rgb(255, 255, 255, 0.7));
+  }
+
+  66% {
+    background: linear-gradient(160deg, orange, rgb(255, 255, 255, 0.7));
+  }
+
+  83% {
+    background: linear-gradient(170deg, orange, rgb(255, 255, 255, 0.7));
+  }
+
+  100% {
+    background: linear-gradient(180deg, orange, rgb(255, 255, 255, 0.7));
+  }
+}
+
+.orange {
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  background: linear-gradient(120deg, orange, rgb(255, 255, 255, 0.7));
+  border-radius: 25% 0% 0% 0%;
+  animation-name: orangeAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes greenAnimation {
+  0% {
+    background: linear-gradient(240deg, green, rgb(255, 255, 255, 0.7))
+  }
+
+  16% {
+    background: linear-gradient(230deg, green, rgb(255, 255, 255, 0.7));
+  }
+
+  33% {
+    background: linear-gradient(220deg, green, rgb(255, 255, 255, 0.7));
+  }
+
+  50% {
+    background: linear-gradient(210deg, green, rgb(255, 255, 255, 0.7));
+  }
+
+  66% {
+    background: linear-gradient(200deg, green, rgb(255, 255, 255, 0.7));
+  }
+
+  83% {
+    background: linear-gradient(190deg, green, rgb(255, 255, 255, 0.7));
+  }
+
+  100% {
+    background: linear-gradient(180deg, green, rdb(255, 255, 255, 0.7));
+  }
+}
+
+.green {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  background: linear-gradient(240deg, green, rgb(255, 255, 255, 0.7));
+  border-radius: 0% 25% 0% 0%;
+  animation-name: greenAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.blue {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  background: linear-gradient(60deg, blue, rgb(255, 255, 255, 0.7));
+  border-radius: 0% 0% 0% 25%;
+  animation-name: blueAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blueAnimation {
+  0% {
+    background: linear-gradient(60deg, blue, rgb(255, 255, 255, 0.7))
+  }
+
+  16% {
+    background: linear-gradient(50deg, blue, rgb(255, 255, 255, 0.7));
+  }
+
+  33% {
+    background: linear-gradient(40deg, blue, rgb(255, 255, 255, 0.7));
+  }
+
+  50% {
+    background: linear-gradient(30deg, blue, rgb(255, 255, 255, 0.7));
+  }
+
+  66% {
+    background: linear-gradient(20deg, blue, rgb(255, 255, 255, 0.7));
+  }
+
+  83% {
+    background: linear-gradient(10deg, blue, rgb(255, 255, 255, 0.7));
+  }
+
+  100% {
+    background: linear-gradient(0deg, blue, rdb(255, 255, 255, 0.7));
+  }
+
+}
+
+.yellow {
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  background: linear-gradient(0deg, yellow, rgb(255, 255, 255, 0.7));
+  border-radius: 0% 0% 25% 0%;
+  animation-name: yellowAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes yellowAnimation {
+  0% {
+    background: linear-gradient(0deg, yellow, rgb(255, 255, 255, 0.7));
+  }
+
+  16% {
+    background: linear-gradient(350deg, yellow, rgb(255, 255, 255, 0.7));
+  }
+
+  33% {
+    background: linear-gradient(340deg, yellow, rgb(255, 255, 255, 0.7));
+  }
+
+  50% {
+    background: linear-gradient(330deg, yellow, rgb(255, 255, 255, 0.7));
+  }
+
+  66% {
+    background: linear-gradient(320deg, yellow, rgb(255, 255, 255, 0.7));
+  }
+
+  83% {
+    background: linear-gradient(310deg, yellow, rgb(255, 255, 255, 0.7));
+  }
+
+  100% {
+    background: linear-gradient(300deg, yellow, rgb(255, 255, 255, 0.7));
+  }
+}

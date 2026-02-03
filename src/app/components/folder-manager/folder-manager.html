@@ -1,0 +1,42 @@
+@if(currentFolder().type == "folder"){
+<div draggable="true" [class]="!mousePressed() ? 'folder-manager' : 'hide'" (dragstart)="dragFolder($event)"
+  (dragend)="dropFolder($event)" [style]="`top: ${position().y}px;left: ${position().x}px; width: ${size().width}%; height: ${size().height}%; ${displayWindow()}`">
+  <div class="folder-control">
+    <p>{{ currentFolder().nombre }}</p>
+    <div class="buttons-control">
+      <button class="btn" (click)="minimize()">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button class="btn" (click)="expand()">
+        <i class="bi bi-square"></i>
+      </button>
+      <button class="btn" (click)="close()">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+  <div class="folder-url">
+    <div class="url">
+      <strong>
+        {{ currentFolder().uri }}
+      </strong>
+    </div>
+    <div class="searcher">
+      <input (change)="changeInput($event)" placeholder="Ingrese el archivo a buscar" />
+    </div>
+  </div>
+  <div class="folder-body">
+    @for(f of currentFolder().files; track f.nombre){
+    @let height = imageSize() + 'px';
+    <button class="btn folder-container" [style]="`height: ${height}; transform: scale(0.75); margin-top: 10px`"
+      (dblclick)="clickFolder($index)">
+      <img [src]="f.icon" />
+      <p> {{ f.nombre}} </p>
+    </button>
+    }
+  </div>
+</div>
+}
+@else{
+  <app-file-manager [file]="currentFolder()" (closeFile)="close()" />
+}

@@ -1,0 +1,40 @@
+<div class="navbar">
+  <div class="menu-programs">
+    <div class="menu-circle">
+      <div class="square-container">
+        <div class="orange">
+        </div>
+        <div class="green">
+        </div>
+        <div class="blue">
+        </div>
+        <div class="yellow">
+        </div>
+      </div>
+    </div>
+    @for(file of files();track file.uri){
+    @switch(file.type){
+    @case("folder"){
+    <app-folder-container [folder]="file" (maximizeFolder)="maximize($event)" />
+    }
+    @case("file"){
+    <app-file-container [file]="file" (maximizeFile)="maximize($event)" />
+    }
+    }
+    }
+  </div>
+  <div class="status">
+    <div class="up">
+      <i class="bi bi-caret-up"></i>
+    </div>
+    <div class="wifi">
+      <i class="bi bi-wifi"></i>
+    </div>
+    <div class="sound">
+      <i class="bi bi-volume-up"></i>
+    </div>
+    <div class="fecha">
+      {{ fecha() }}
+    </div>
+  </div>
+</div>
