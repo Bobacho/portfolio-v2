@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Project
         # This replaces the base-href dynamically
-        run: npm run build --base-href=/portfolio-v2/
+        run: npm run build -- --base-href=/portfolio-v2/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
