@@ -13,7 +13,7 @@ export class DoomContainer implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.dosbox = Dos(document.getElementById("dos"), {
-      url: "/assets/doom.jsdos",
+      url: "assets/doom.jsdos",
       autoStart: true,
       thinSidebar: true,
       uiControlsScale: 0.5
