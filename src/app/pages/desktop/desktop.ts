@@ -16,7 +16,7 @@ export class Desktop {
       uri: "aboutme",
       type: 'file',
       mime: 'pdf',
-      icon: '/assets/images/pdf_icon.png',
+      icon: 'assets/images/pdf_icon.png',
       src: ''
     },
     {
@@ -29,7 +29,7 @@ export class Desktop {
         type: 'file',
         mime: 'html',
         src: 'https://www.agroplus.com.pe',
-        icon: '/assets/images/html_icon.png'
+        icon: 'assets/images/html_icon.png'
       },
       {
         nombre: 'zootecpro',
@@ -38,7 +38,7 @@ export class Desktop {
         mime: 'html',
         src: 'https://www.zootecpro.com',
         error: true,
-        icon: '/assets/images/html_icon.png'
+        icon: 'assets/images/html_icon.png'
       },
       {
         nombre: 'agromaq',
@@ -47,7 +47,7 @@ export class Desktop {
         mime: 'html',
         src: 'https://www.agromaq.com',
         error: true,
-        icon: '/assets/images/html_icon.png'
+        icon: 'assets/images/html_icon.png'
       }]
     } as Folder, {
       nombre: 'experiencia',
@@ -58,7 +58,7 @@ export class Desktop {
         uri: 'experiencia/experiencia.pdf',
         type: 'file',
         mime: 'pdf',
-        icon: '/assets/images/pdf_icon.png'
+        icon: 'assets/images/pdf_icon.png'
       }]
     } as Folder,
     {
@@ -70,14 +70,14 @@ export class Desktop {
         uri: "educacion/educacion.pdf",
         type: "file",
         mime: "pdf",
-        icon: "/assets/images/pdf_icon.png"
+        icon: "assets/images/pdf_icon.png"
       }]
     } as Folder,
     {
       nombre: "doom",
       type: 'file',
       uri: './doom.exe',
-      icon: '/assets/images/doom.png',
+      icon: 'assets/images/doom.png',
       mime: 'doom'
     }])
   filesOpened = signal<File[]>([])
