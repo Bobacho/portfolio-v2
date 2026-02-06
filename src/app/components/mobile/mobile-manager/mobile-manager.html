@@ -1,0 +1,14 @@
+<div class="background">
+</div>
+<div class="desktop">
+  @for(file of files(); track $index){
+  @switch(file.type){
+  @case("folder"){
+  <app-folder-container (closeFolder)="closeFolder($event)" [isMaximized]="true" [folder]="file" />
+  }
+  @case("file"){
+  <app-file-container [file]="file" (closefile)="closeFolder($event)" [isMaximized]="true" [file]="file" />
+  }
+  }
+  }
+</div>

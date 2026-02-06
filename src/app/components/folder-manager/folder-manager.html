@@ -29,7 +29,7 @@
     @for(f of currentFolder().files; track f.nombre){
     @let height = imageSize() + 'px';
     <button class="btn folder-container" [style]="`height: ${height}; transform: scale(0.75); margin-top: 10px`"
-      (dblclick)="clickFolder($index)">
+      (dblclick)="clickFolder($index)" (click)="clickFolderMobile($index)">
       <img [src]="f.icon" />
       <p> {{ f.nombre}} </p>
     </button>

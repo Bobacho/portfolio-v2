@@ -38,7 +38,9 @@ export class FolderManager {
     })
   }
   ngOnInit() {
-    console.log(this.currentFolder().files)
+    if (this.isMaximized()) {
+      this.expandMobile()
+    }
   }
 
   private maximized = false;
@@ -78,6 +80,13 @@ export class FolderManager {
     this.searchInput.set(value)
   }
 
+  clickFolderMobile(index: number) {
+    if (window.innerWidth > 820) {
+      return
+    }
+    this.clickFolder(index)
+  }
+
   clickFolder(index: number) {
     const folder = this.folder()
     if (!folder || !folder.files) { return }
@@ -90,7 +99,35 @@ export class FolderManager {
   close() {
     this.closeFolder.emit()
   }
+  expandMobile() {
+    if (!this.maximized) {
+      this.position.set({
+        x: 0,
+        y: 0
+      })
+      this.size.set({
+        height: 100,
+        width: 100
+      })
+    }
+    else {
+      this.position.set({
+        x: 25,
+        y: 25
+      })
+      this.size.set({
+        height: 50,
+        width: 50
+      })
+    }
+    this.maximized = !this.maximized
+
+  }
+
   expand() {
+    if (window.innerWidth < 820) {
+      return
+    }
     if (!this.maximized) {
       this.position.set({
         x: 0,
@@ -115,6 +152,9 @@ export class FolderManager {
   }
 
   minimize() {
+    if (window.innerWidth < 820) {
+      return
+    }
     this.minimizedSignal.set(true)
   }
 }

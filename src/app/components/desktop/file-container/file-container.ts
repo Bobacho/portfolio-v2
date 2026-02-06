@@ -1,4 +1,4 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { File } from '@/app/types/file.type';
 import { FileManager } from "../../file-manager/file-manager";
 
@@ -18,10 +18,26 @@ export class FileContainer {
 
   isMaximized = input<boolean>(false)
 
+  shouldMaximize = computed(() => {
+    return window.innerWidth < 820 || this.isMaximized()
+  })
+
   fileClicked = signal(false)
   imageSize = signal(0)
   constructor() {
     this.imageSize.set(window.outerHeight / 16)
+  }
+
+  clickFileMobile() {
+    if (window.innerWidth < 820) {
+      this.fileClicked.set(true)
+    }
+  }
+  closeMobile() {
+    if (window.innerWidth < 820) {
+      this.fileClicked.set(false)
+      this.closefile.emit(this.file())
+    }
   }
 
   clickFile() {

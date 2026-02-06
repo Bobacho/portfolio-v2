@@ -1,15 +1,23 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, effect, OnInit, signal } from '@angular/core';
 import { DesktopFooter } from '../../components/desktop/desktop-footer/desktop-footer';
 import { DesktopManager } from '../../components/desktop/desktop-manager/desktop-manager';
 import { File, Folder } from '@/app/types/file.type'
+import { MobileManager } from "@/app/components/mobile/mobile-manager/mobile-manager";
+import { MobileFooter } from "@/app/components/mobile/mobile-footer/mobile-footer";
+import { MobileHeader } from "@/app/components/mobile/mobile-header/mobile-header";
 
 @Component({
   selector: 'app-desktop',
-  imports: [DesktopFooter, DesktopManager],
+  imports: [DesktopFooter, DesktopManager, MobileManager, MobileFooter, MobileHeader],
   templateUrl: './desktop.html',
   styleUrl: './desktop.css'
 })
-export class Desktop {
+export class Desktop implements OnInit {
+  windowSize: number = 0;
+
+  ngOnInit(): void {
+    this.windowSize = window.innerWidth
+  }
   files = signal<File[]>([
     {
       nombre: "sobre mi",

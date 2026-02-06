@@ -39,6 +39,11 @@ export class FileManager {
       }
     })
   }
+  ngOnInit() {
+    if (this.isMaximized()) {
+      this.expandMobile()
+    }
+  }
 
 
   private maximized = false;
@@ -85,7 +90,35 @@ export class FileManager {
   close() {
     this.closeFile.emit()
   }
+
+  expandMobile() {
+    if (!this.maximized) {
+      this.position.set({
+        x: 0,
+        y: 0
+      })
+      this.size.set({
+        height: 100,
+        width: 100
+      })
+    }
+    else {
+      this.position.set({
+        x: 25,
+        y: 25
+      })
+      this.size.set({
+        height: 50,
+        width: 50
+      })
+    }
+    this.maximized = !this.maximized
+
+  }
   expand() {
+    if (window.innerWidth < 820) {
+      return
+    }
     if (!this.maximized) {
       this.position.set({
         x: 0,
@@ -110,6 +143,9 @@ export class FileManager {
   }
 
   minimize() {
+    if (window.innerWidth < 820) {
+      return
+    }
     this.minimizedSignal.set(true)
   }
 }

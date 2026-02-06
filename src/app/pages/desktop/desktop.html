@@ -1,5 +1,14 @@
+@if(windowSize > 820){
 <div class="screen">
   <app-desktop-manager (appendFile)="appendFile($event)" (closeFile)="closeFile($event)" [files]="files()"
     [maximizeFiles]="maximizeFiles()" />
   <app-desktop-footer [files]="filesOpened()" (maximizeFile)="maximizeFile($event)" />
 </div>
+}
+@else{
+<div class="screen">
+  <app-mobile-header />
+  <app-mobile-manager [files]="files()" />
+  <app-mobile-footer />
+</div>
+}

@@ -1,5 +1,5 @@
 import { Folder } from '@/app/types/file.type';
-import { Component, EventEmitter, input, output, signal } from '@angular/core';
+import { Component, computed, EventEmitter, input, output, signal } from '@angular/core';
 import { FolderManager } from '../../folder-manager/folder-manager';
 
 @Component({
@@ -17,11 +17,21 @@ export class FolderContainer {
   closeFolder = output<Folder>()
 
   isMaximized = input<boolean>(false)
+  shouldMaximize = computed(() => {
+    return window.innerWidth < 820 || this.isMaximized()
+  })
 
   folderClicked = signal(false)
   imageSize = signal(0)
   constructor() {
     this.imageSize.set(window.outerHeight / 16)
+  }
+
+  clickFolderMobile() {
+    if (window.innerWidth < 820) {
+      this.folderClicked.set(true)
+      this.closeFolder.emit(this.folder())
+    }
   }
 
   clickFolder() {

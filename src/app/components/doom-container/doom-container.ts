@@ -36,7 +36,11 @@ export class DoomContainer implements AfterViewInit {
 
       if (svg) {
         const renderWindow = document.querySelector(".pre-run-window")
-        renderWindow?.setAttribute("style", "width: 300px; position: relative; top: 0%, left: 25%;")
+        let width = 300
+        if (window.innerWidth < 820) {
+          width = 64
+        }
+        renderWindow?.setAttribute("style", `width: ${width}px;position: relative; top: 0%, left: 25%;`)
       }
 
       const downText = document.querySelector(".top-6")
